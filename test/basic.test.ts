@@ -156,6 +156,7 @@ describe('tests', () => {
   }
 
   it('works fact', () => {
+    // https://oeis.org/A000108
     expect(BracketCombinationsFact(2)).toEqual(2)
     expect(BracketCombinationsFact(3)).toEqual(5)
     expect(BracketCombinationsFact(4)).toEqual(14)
