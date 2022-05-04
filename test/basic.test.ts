@@ -141,5 +141,30 @@ describe('tests', () => {
     expect(BracketCombinations(7)).toEqual(429)
     expect(BracketCombinations(8)).toEqual(1430)
     expect(BracketCombinations(9)).toEqual(4862)
+    // expect(BracketCombinations(16)).toEqual(35357670)
+  })
+
+  function factorial(num: number): number {
+    let rval = 1
+    for (let i = 2; i <= num; i++)
+      rval = rval * i
+    return rval
+  }
+
+  function BracketCombinationsFact(num: number): number {
+    return (factorial(2 * num) / (factorial(num + 1) * factorial(num)))
+  }
+
+  it('works fact', () => {
+    expect(BracketCombinationsFact(2)).toEqual(2)
+    expect(BracketCombinationsFact(3)).toEqual(5)
+    expect(BracketCombinationsFact(4)).toEqual(14)
+    expect(BracketCombinationsFact(5)).toEqual(42)
+    expect(BracketCombinationsFact(7)).toEqual(429)
+    expect(BracketCombinationsFact(8)).toEqual(1430)
+    expect(BracketCombinationsFact(9)).toEqual(4862)
+    expect(BracketCombinationsFact(16)).toEqual(35357670)
+    // expect(BracketCombinationsFact(22)).toEqual(91482563640)
+    // expect(BracketCombinationsFact(30)).toEqual(3814986502092304)
   })
 })
